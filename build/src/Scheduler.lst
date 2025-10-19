@@ -1,0 +1,348 @@
+GAS LISTING /tmp/ccoigAW1.s 			page 1
+
+
+   1              		.file	"Scheduler.cpp"
+   2              		.option pic
+   3              		.option norelax
+   4              		.text
+   5              	.Ltext0:
+   6              		.align	2
+   8              	_Z41__static_initialization_and_destruction_0ii:
+   9              	.LFB31:
+  10              		.file 1 "src/Scheduler.cpp"
+   1:src/Scheduler.cpp **** //
+   2:src/Scheduler.cpp **** // Created by os on 10/13/25.
+   3:src/Scheduler.cpp **** //
+   4:src/Scheduler.cpp **** #include "../h/Scheduler.h"
+   5:src/Scheduler.cpp **** List<PCB> Scheduler::ready;
+   6:src/Scheduler.cpp **** List<PCB> Scheduler::sleep;...
+  11              		.loc 1 6 27
+  12              		.cfi_startproc
+  13              	.LVL0:
+  14 0000 130101FF 		addi	sp,sp,-16
+  15              		.cfi_def_cfa_offset 16
+  16 0004 23348100 		sd	s0,8(sp)
+  17              		.cfi_offset 8, -8
+  18 0008 13040101 		addi	s0,sp,16
+  19              		.cfi_def_cfa 8, 0
+  20              		.loc 1 6 27 is_stmt 0
+  21 000c 93071000 		li	a5,1
+  22 0010 6308F500 		beq	a0,a5,.L4
+  23              	.L1:
+  24 0014 03348100 		ld	s0,8(sp)
+  25              		.cfi_remember_state
+  26              		.cfi_restore 8
+  27              		.cfi_def_cfa 2, 16
+  28 0018 13010101 		addi	sp,sp,16
+  29              		.cfi_def_cfa_offset 0
+  30 001c 67800000 		jr	ra
+  31              	.L4:
+  32              		.cfi_restore_state
+  33              		.loc 1 6 27 discriminator 1
+  34 0020 B7070100 		li	a5,65536
+  35 0024 9387F7FF 		addi	a5,a5,-1
+  36 0028 E396F5FE 		bne	a1,a5,.L1
+  37              	.LVL1:
+  38              	.LBB8:
+  39              	.LBB9:
+  40              	.LBB10:
+  41              		.file 2 "src/../h/../h/list.h"
+   1:src/../h/../h/list.h **** //
+   2:src/../h/../h/list.h **** // Created by os on 10/18/25.
+   3:src/../h/../h/list.h **** //
+   4:src/../h/../h/list.h **** 
+   5:src/../h/../h/list.h **** #ifndef PROJEKAT_LIST_H
+   6:src/../h/../h/list.h **** #define PROJEKAT_LIST_H
+   7:src/../h/../h/list.h **** 
+   8:src/../h/../h/list.h **** template <typename T>
+   9:src/../h/../h/list.h **** class List {
+  10:src/../h/../h/list.h **** private:
+  11:src/../h/../h/list.h ****     struct Elem {
+GAS LISTING /tmp/ccoigAW1.s 			page 2
+
+
+  12:src/../h/../h/list.h ****         T* data;
+  13:src/../h/../h/list.h ****         Elem* next;
+  14:src/../h/../h/list.h **** 
+  15:src/../h/../h/list.h ****         Elem(T* dat, Elem* nxt) : data(dat), next(nxt) {}
+  16:src/../h/../h/list.h ****     };
+  17:src/../h/../h/list.h ****     Elem* head;
+  18:src/../h/../h/list.h ****     Elem* tail;
+  19:src/../h/../h/list.h ****     unsigned long size;
+  20:src/../h/../h/list.h **** public:
+  21:src/../h/../h/list.h ****     List() : head(0), tail(0), size(0) {}
+  42              		.loc 2 21 38
+  43 002c 97070000 		lla	a5,.LANCHOR0
+  43      93870700 
+  44 0034 23B00700 		sd	zero,0(a5)
+  45 0038 23B40700 		sd	zero,8(a5)
+  46 003c 23B80700 		sd	zero,16(a5)
+  47              	.LVL2:
+  48              	.LBE10:
+  49              	.LBE9:
+  50              	.LBE8:
+  51              	.LBB11:
+  52              	.LBB12:
+  53              	.LBB13:
+  54 0040 23BC0700 		sd	zero,24(a5)
+  55 0044 23B00702 		sd	zero,32(a5)
+  56 0048 23B40702 		sd	zero,40(a5)
+  57              	.LVL3:
+  58              	.LBE13:
+  59              	.LBE12:
+  60              	.LBE11:
+  61              		.loc 1 6 27
+  62 004c 6FF09FFC 		j	.L1
+  63              		.cfi_endproc
+  64              	.LFE31:
+  66              		.align	2
+  68              	_GLOBAL__sub_I__ZN9Scheduler5readyE:
+  69              	.LFB32:
+  70              		.loc 1 6 27 is_stmt 1
+  71              		.cfi_startproc
+  72 0050 130101FF 		addi	sp,sp,-16
+  73              		.cfi_def_cfa_offset 16
+  74 0054 23341100 		sd	ra,8(sp)
+  75 0058 23308100 		sd	s0,0(sp)
+  76              		.cfi_offset 1, -8
+  77              		.cfi_offset 8, -16
+  78 005c 13040101 		addi	s0,sp,16
+  79              		.cfi_def_cfa 8, 0
+  80              		.loc 1 6 27 is_stmt 0
+  81 0060 B7050100 		li	a1,65536
+  82 0064 9385F5FF 		addi	a1,a1,-1
+  83 0068 13051000 		li	a0,1
+  84 006c 97000000 		call	_Z41__static_initialization_and_destruction_0ii
+  84      E7800000 
+  85              	.LVL4:
+  86 0074 83308100 		ld	ra,8(sp)
+  87              		.cfi_restore 1
+  88 0078 03340100 		ld	s0,0(sp)
+GAS LISTING /tmp/ccoigAW1.s 			page 3
+
+
+  89              		.cfi_restore 8
+  90              		.cfi_def_cfa 2, 16
+  91 007c 13010101 		addi	sp,sp,16
+  92              		.cfi_def_cfa_offset 0
+  93 0080 67800000 		jr	ra
+  94              		.cfi_endproc
+  95              	.LFE32:
+  97              		.section	.init_array,"aw"
+  98              		.align	3
+  99 0000 00000000 		.dword	_GLOBAL__sub_I__ZN9Scheduler5readyE
+  99      00000000 
+ 100              		.globl	_ZN9Scheduler5sleepE
+ 101              		.globl	_ZN9Scheduler5readyE
+ 102              		.bss
+ 103              		.align	3
+ 104              		.set	.LANCHOR0,. + 0
+ 107              	_ZN9Scheduler5readyE:
+ 108 0000 00000000 		.zero	24
+ 108      00000000 
+ 108      00000000 
+ 108      00000000 
+ 108      00000000 
+ 111              	_ZN9Scheduler5sleepE:
+ 112 0018 00000000 		.zero	24
+ 112      00000000 
+ 112      00000000 
+ 112      00000000 
+ 112      00000000 
+ 113              		.text
+ 114              	.Letext0:
+ 115              		.file 3 "src/../h/../h/../h/../lib/hw.h"
+ 116              		.file 4 "src/../h/../h/../h/syscall_c.h"
+ 117              		.file 5 "src/../h/../h/PCB.h"
+ 118              		.file 6 "src/../h/Scheduler.h"
+GAS LISTING /tmp/ccoigAW1.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 Scheduler.cpp
+     /tmp/ccoigAW1.s:8      .text:0000000000000000 _Z41__static_initialization_and_destruction_0ii
+     /tmp/ccoigAW1.s:12     .text:0000000000000000 .L0 
+     /tmp/ccoigAW1.s:14     .text:0000000000000000 .L0 
+     /tmp/ccoigAW1.s:15     .text:0000000000000004 .L0 
+     /tmp/ccoigAW1.s:17     .text:0000000000000008 .L0 
+     /tmp/ccoigAW1.s:19     .text:000000000000000c .L0 
+     /tmp/ccoigAW1.s:21     .text:000000000000000c .L0 
+     /tmp/ccoigAW1.s:25     .text:0000000000000018 .L0 
+     /tmp/ccoigAW1.s:26     .text:0000000000000018 .L0 
+     /tmp/ccoigAW1.s:27     .text:0000000000000018 .L0 
+     /tmp/ccoigAW1.s:29     .text:000000000000001c .L0 
+     /tmp/ccoigAW1.s:32     .text:0000000000000020 .L0 
+     /tmp/ccoigAW1.s:34     .text:0000000000000020 .L0 
+     /tmp/ccoigAW1.s:43     .text:000000000000002c .L0 
+     /tmp/ccoigAW1.s:62     .text:000000000000004c .L0 
+     /tmp/ccoigAW1.s:63     .text:0000000000000050 .L0 
+     /tmp/ccoigAW1.s:68     .text:0000000000000050 _GLOBAL__sub_I__ZN9Scheduler5readyE
+     /tmp/ccoigAW1.s:71     .text:0000000000000050 .L0 
+     /tmp/ccoigAW1.s:72     .text:0000000000000050 .L0 
+     /tmp/ccoigAW1.s:73     .text:0000000000000054 .L0 
+     /tmp/ccoigAW1.s:76     .text:000000000000005c .L0 
+     /tmp/ccoigAW1.s:77     .text:000000000000005c .L0 
+     /tmp/ccoigAW1.s:79     .text:0000000000000060 .L0 
+     /tmp/ccoigAW1.s:81     .text:0000000000000060 .L0 
+     /tmp/ccoigAW1.s:87     .text:0000000000000078 .L0 
+     /tmp/ccoigAW1.s:89     .text:000000000000007c .L0 
+     /tmp/ccoigAW1.s:90     .text:000000000000007c .L0 
+     /tmp/ccoigAW1.s:92     .text:0000000000000080 .L0 
+     /tmp/ccoigAW1.s:94     .text:0000000000000084 .L0 
+     /tmp/ccoigAW1.s:111    .bss:0000000000000018 _ZN9Scheduler5sleepE
+     /tmp/ccoigAW1.s:107    .bss:0000000000000000 _ZN9Scheduler5readyE
+     /tmp/ccoigAW1.s:104    .bss:0000000000000000 .LANCHOR0
+     /tmp/ccoigAW1.s:119    .text:0000000000000084 .L0 
+     /tmp/ccoigAW1.s:43     .text:000000000000002c .L0 
+     /tmp/ccoigAW1.s:31     .text:0000000000000020 .L4
+     /tmp/ccoigAW1.s:23     .text:0000000000000014 .L1
+     /tmp/ccoigAW1.s:1086   .debug_abbrev:0000000000000000 .Ldebug_abbrev0
+     /tmp/ccoigAW1.s:2291   .debug_str:0000000000000641 .LASF106
+     /tmp/ccoigAW1.s:2309   .debug_str:00000000000007a3 .LASF107
+     /tmp/ccoigAW1.s:2243   .debug_str:00000000000004bf .LASF108
+     /tmp/ccoigAW1.s:5      .text:0000000000000000 .Ltext0
+     /tmp/ccoigAW1.s:114    .text:0000000000000084 .Letext0
+     /tmp/ccoigAW1.s:2083   .debug_line:0000000000000000 .Ldebug_line0
+     /tmp/ccoigAW1.s:2227   .debug_str:0000000000000463 .LASF0
+     /tmp/ccoigAW1.s:2241   .debug_str:00000000000004ac .LASF1
+     /tmp/ccoigAW1.s:2211   .debug_str:00000000000003fb .LASF2
+     /tmp/ccoigAW1.s:2143   .debug_str:00000000000001ee .LASF3
+     /tmp/ccoigAW1.s:2179   .debug_str:0000000000000316 .LASF4
+     /tmp/ccoigAW1.s:2281   .debug_str:00000000000005fb .LASF5
+     /tmp/ccoigAW1.s:2107   .debug_str:00000000000000a7 .LASF6
+     /tmp/ccoigAW1.s:2245   .debug_str:00000000000004ee .LASF7
+     /tmp/ccoigAW1.s:2225   .debug_str:0000000000000450 .LASF8
+     /tmp/ccoigAW1.s:2303   .debug_str:0000000000000766 .LASF9
+     /tmp/ccoigAW1.s:2161   .debug_str:0000000000000293 .LASF10
+     /tmp/ccoigAW1.s:2261   .debug_str:000000000000055d .LASF11
+GAS LISTING /tmp/ccoigAW1.s 			page 5
+
+
+     /tmp/ccoigAW1.s:2295   .debug_str:0000000000000712 .LASF12
+     /tmp/ccoigAW1.s:2111   .debug_str:00000000000000b6 .LASF13
+     /tmp/ccoigAW1.s:2089   .debug_str:000000000000001d .LASF14
+     /tmp/ccoigAW1.s:2125   .debug_str:0000000000000155 .LASF15
+     /tmp/ccoigAW1.s:2275   .debug_str:00000000000005c5 .LASF16
+     /tmp/ccoigAW1.s:2135   .debug_str:00000000000001c3 .LASF17
+     /tmp/ccoigAW1.s:2247   .debug_str:0000000000000501 .LASF18
+     /tmp/ccoigAW1.s:2195   .debug_str:0000000000000368 .LASF19
+     /tmp/ccoigAW1.s:2093   .debug_str:0000000000000040 .LASF20
+     /tmp/ccoigAW1.s:2115   .debug_str:00000000000000e5 .LASF21
+     /tmp/ccoigAW1.s:2147   .debug_str:0000000000000213 .LASF22
+     /tmp/ccoigAW1.s:2163   .debug_str:00000000000002a1 .LASF23
+     /tmp/ccoigAW1.s:2317   .debug_str:00000000000007ee .LASF24
+     /tmp/ccoigAW1.s:2105   .debug_str:0000000000000096 .LASF25
+     /tmp/ccoigAW1.s:2151   .debug_str:0000000000000231 .LASF26
+     /tmp/ccoigAW1.s:2321   .debug_str:000000000000080b .LASF27
+     /tmp/ccoigAW1.s:2279   .debug_str:00000000000005e8 .LASF28
+     /tmp/ccoigAW1.s:2091   .debug_str:000000000000002d .LASF29
+     /tmp/ccoigAW1.s:2293   .debug_str:0000000000000705 .LASF30
+     /tmp/ccoigAW1.s:2277   .debug_str:00000000000005db .LASF31
+     /tmp/ccoigAW1.s:2095   .debug_str:000000000000005b .LASF78
+     /tmp/ccoigAW1.s:2199   .debug_str:0000000000000391 .LASF32
+     /tmp/ccoigAW1.s:2145   .debug_str:00000000000001f4 .LASF34
+     /tmp/ccoigAW1.s:2263   .debug_str:000000000000056c .LASF109
+     /tmp/ccoigAW1.s:2273   .debug_str:00000000000005c0 .LASF33
+     /tmp/ccoigAW1.s:2119   .debug_str:0000000000000117 .LASF35
+     /tmp/ccoigAW1.s:2189   .debug_str:0000000000000341 .LASF38
+     /tmp/ccoigAW1.s:2201   .debug_str:000000000000039b .LASF40
+     /tmp/ccoigAW1.s:2219   .debug_str:0000000000000425 .LASF36
+     /tmp/ccoigAW1.s:2205   .debug_str:00000000000003bc .LASF37
+     /tmp/ccoigAW1.s:2203   .debug_str:00000000000003af .LASF39
+     /tmp/ccoigAW1.s:2157   .debug_str:0000000000000265 .LASF41
+     /tmp/ccoigAW1.s:2149   .debug_str:0000000000000229 .LASF110
+     /tmp/ccoigAW1.s:2129   .debug_str:000000000000017a .LASF90
+     /tmp/ccoigAW1.s:2315   .debug_str:00000000000007e8 .LASF42
+     /tmp/ccoigAW1.s:2233   .debug_str:000000000000047f .LASF43
+     /tmp/ccoigAW1.s:2231   .debug_str:0000000000000479 .LASF44
+     /tmp/ccoigAW1.s:2187   .debug_str:0000000000000339 .LASF45
+     /tmp/ccoigAW1.s:2239   .debug_str:00000000000004a2 .LASF46
+     /tmp/ccoigAW1.s:2101   .debug_str:0000000000000087 .LASF47
+     /tmp/ccoigAW1.s:2307   .debug_str:000000000000078b .LASF48
+     /tmp/ccoigAW1.s:2175   .debug_str:0000000000000304 .LASF62
+     /tmp/ccoigAW1.s:2207   .debug_str:00000000000003d4 .LASF49
+     /tmp/ccoigAW1.s:2255   .debug_str:0000000000000534 .LASF51
+     /tmp/ccoigAW1.s:2229   .debug_str:0000000000000470 .LASF50
+     /tmp/ccoigAW1.s:2173   .debug_str:00000000000002f1 .LASF52
+     /tmp/ccoigAW1.s:2131   .debug_str:0000000000000191 .LASF111
+     /tmp/ccoigAW1.s:2123   .debug_str:000000000000012d .LASF112
+     /tmp/ccoigAW1.s:2251   .debug_str:0000000000000527 .LASF53
+     /tmp/ccoigAW1.s:2167   .debug_str:00000000000002c2 .LASF113
+     /tmp/ccoigAW1.s:2191   .debug_str:000000000000034a .LASF54
+     /tmp/ccoigAW1.s:2259   .debug_str:0000000000000557 .LASF55
+     /tmp/ccoigAW1.s:2253   .debug_str:000000000000052c .LASF56
+     /tmp/ccoigAW1.s:2181   .debug_str:000000000000031d .LASF57
+     /tmp/ccoigAW1.s:2097   .debug_str:0000000000000063 .LASF58
+     /tmp/ccoigAW1.s:2285   .debug_str:000000000000061f .LASF59
+     /tmp/ccoigAW1.s:2155   .debug_str:0000000000000260 .LASF60
+GAS LISTING /tmp/ccoigAW1.s 			page 6
+
+
+     /tmp/ccoigAW1.s:2257   .debug_str:000000000000054d .LASF61
+     /tmp/ccoigAW1.s:2085   .debug_str:0000000000000000 .LASF63
+     /tmp/ccoigAW1.s:2323   .debug_str:000000000000081c .LASF64
+     /tmp/ccoigAW1.s:2283   .debug_str:000000000000060d .LASF72
+     /tmp/ccoigAW1.s:2297   .debug_str:0000000000000721 .LASF65
+     /tmp/ccoigAW1.s:2221   .debug_str:000000000000042e .LASF66
+     /tmp/ccoigAW1.s:2305   .debug_str:0000000000000776 .LASF67
+     /tmp/ccoigAW1.s:2249   .debug_str:0000000000000513 .LASF68
+     /tmp/ccoigAW1.s:2287   .debug_str:0000000000000628 .LASF69
+     /tmp/ccoigAW1.s:2235   .debug_str:0000000000000484 .LASF70
+     /tmp/ccoigAW1.s:2209   .debug_str:00000000000003e2 .LASF75
+     /tmp/ccoigAW1.s:2117   .debug_str:0000000000000103 .LASF114
+     /tmp/ccoigAW1.s:2197   .debug_str:0000000000000379 .LASF115
+     /tmp/ccoigAW1.s:2183   .debug_str:0000000000000325 .LASF71
+     /tmp/ccoigAW1.s:2299   .debug_str:0000000000000736 .LASF73
+     /tmp/ccoigAW1.s:2103   .debug_str:000000000000008d .LASF74
+     /tmp/ccoigAW1.s:2127   .debug_str:0000000000000161 .LASF76
+     /tmp/ccoigAW1.s:2171   .debug_str:00000000000002e7 .LASF77
+     /tmp/ccoigAW1.s:2139   .debug_str:00000000000001e4 .LASF79
+     /tmp/ccoigAW1.s:2271   .debug_str:00000000000005bb .LASF80
+     /tmp/ccoigAW1.s:2319   .debug_str:0000000000000806 .LASF81
+     /tmp/ccoigAW1.s:2169   .debug_str:00000000000002c8 .LASF116
+     /tmp/ccoigAW1.s:2141   .debug_str:00000000000001e9 .LASF82
+     /tmp/ccoigAW1.s:2215   .debug_str:0000000000000411 .LASF83
+     /tmp/ccoigAW1.s:2289   .debug_str:000000000000063c .LASF84
+     /tmp/ccoigAW1.s:2177   .debug_str:0000000000000311 .LASF85
+     /tmp/ccoigAW1.s:2193   .debug_str:0000000000000355 .LASF86
+     /tmp/ccoigAW1.s:2087   .debug_str:0000000000000006 .LASF87
+     /tmp/ccoigAW1.s:2313   .debug_str:00000000000007d1 .LASF117
+     /tmp/ccoigAW1.s:2109   .debug_str:00000000000000ae .LASF88
+     /tmp/ccoigAW1.s:2265   .debug_str:0000000000000572 .LASF89
+     /tmp/ccoigAW1.s:2223   .debug_str:0000000000000438 .LASF91
+     /tmp/ccoigAW1.s:2213   .debug_str:0000000000000409 .LASF92
+     /tmp/ccoigAW1.s:2311   .debug_str:00000000000007b5 .LASF93
+     /tmp/ccoigAW1.s:2165   .debug_str:00000000000002b5 .LASF94
+     /tmp/ccoigAW1.s:2113   .debug_str:00000000000000c6 .LASF95
+     /tmp/ccoigAW1.s:2121   .debug_str:0000000000000123 .LASF96
+     /tmp/ccoigAW1.s:2099   .debug_str:000000000000006c .LASF97
+     /tmp/ccoigAW1.s:2137   .debug_str:00000000000001d9 .LASF98
+     /tmp/ccoigAW1.s:2153   .debug_str:0000000000000243 .LASF99
+     /tmp/ccoigAW1.s:2237   .debug_str:000000000000048d .LASF100
+     /tmp/ccoigAW1.s:2159   .debug_str:000000000000027e .LASF101
+     /tmp/ccoigAW1.s:2133   .debug_str:000000000000019f .LASF102
+     /tmp/ccoigAW1.s:69     .text:0000000000000050 .LFB32
+     /tmp/ccoigAW1.s:95     .text:0000000000000084 .LFE32
+     /tmp/ccoigAW1.s:85     .text:0000000000000074 .LVL4
+     /tmp/ccoigAW1.s:2267   .debug_str:000000000000058c .LASF103
+     /tmp/ccoigAW1.s:9      .text:0000000000000000 .LFB31
+     /tmp/ccoigAW1.s:64     .text:0000000000000050 .LFE31
+     /tmp/ccoigAW1.s:2217   .debug_str:0000000000000416 .LASF104
+     /tmp/ccoigAW1.s:2185   .debug_str:000000000000032e .LASF105
+     /tmp/ccoigAW1.s:38     .text:000000000000002c .LBB8
+     /tmp/ccoigAW1.s:50     .text:0000000000000040 .LBE8
+     /tmp/ccoigAW1.s:2052   .debug_loc:0000000000000000 .LLST0
+     /tmp/ccoigAW1.s:51     .text:0000000000000040 .LBB11
+     /tmp/ccoigAW1.s:60     .text:000000000000004c .LBE11
+     /tmp/ccoigAW1.s:2061   .debug_loc:000000000000002c .LLST1
+GAS LISTING /tmp/ccoigAW1.s 			page 7
+
+
+     /tmp/ccoigAW1.s:2269   .debug_str:00000000000005b6 .LASF118
+     /tmp/ccoigAW1.s:2301   .debug_str:0000000000000753 .LASF119
+     /tmp/ccoigAW1.s:37     .text:000000000000002c .LVL1
+     /tmp/ccoigAW1.s:47     .text:0000000000000040 .LVL2
+     /tmp/ccoigAW1.s:57     .text:000000000000004c .LVL3
+     /tmp/ccoigAW1.s:120    .debug_info:0000000000000000 .Ldebug_info0
+
+NO UNDEFINED SYMBOLS
